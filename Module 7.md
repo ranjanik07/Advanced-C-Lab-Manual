@@ -1,4 +1,6 @@
-EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
+## EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
+# Name : RANJANI K
+# Reg No : 212224230220
 
 Aim:
 To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
@@ -15,13 +17,33 @@ Else
 6.	Return 0
  
 Program:
-
-//type your code here
+```
+#include<stdio.h>
+struct eligib
+{
+int age;
+char n[4];
+};
+int main()
+{
+struct eligib e;
+scanf("%d%s",&e.age,e.n);
+if(e.age<=6)
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
+}
+else
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
+}
+}
+```
 
 
 Output:
 
-//paste your output here
+<img width="742" height="288" alt="Screenshot 2025-10-24 082516" src="https://github.com/user-attachments/assets/f2aed35e-a16f-46e1-8f8c-49e255aa6399" />
+
 
 
 Result:
@@ -44,15 +66,32 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include<stdio.h>
+struct numbers
+{
+int a;
+int b;
+}n;
+int add(struct numbers n);
+int main()
+{
+scanf("%d %d ",&n.a,&n.b);
+printf("%d",add(n));
+}
+int add(struct numbers n)
+{
+return n.a+n.b;
+}
 
+```
 
 
 
 Output:
 
+<img width="275" height="312" alt="image" src="https://github.com/user-attachments/assets/c742b37d-ea4b-4adb-b7a6-0192e992de98" />
 
-//paste your output here
 
 
 
@@ -86,15 +125,24 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
-
+```
+#include <stdio.h>
+int main()
+{
+FILE *p;
+char name[30]; scanf("%s",name);
+printf("%s File Created Successfully",name); p=fopen("name","w");
+printf("\n%s File Opened",name); fclose(p);
+printf("\n%s File Closed",name);
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
+<img width="795" height="262" alt="image" src="https://github.com/user-attachments/assets/e02f621f-bc31-4da7-a601-b7dd6045809d" />
 
 
 
@@ -133,15 +181,31 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
-
+```
+#include <stdio.h>
+int main()
+{
+FILE *p;
+char name[20]; int num;
+char text[50];
+scanf("%s%d",name,&num);
+p=fopen("name","w");
+printf("%s Opened",name);
+for(int i=0;i<num;i++)
+{
+scanf("%s",text);
+fputs(text,p);
+}
+printf("\nData added Successfully");
+}
+```
 
 
 
 Output:
 
 
-//paste your output here
+<img width="660" height="303" alt="image" src="https://github.com/user-attachments/assets/e9337b52-2e3e-48d0-9a52-d4f6d215582c" />
 
 
 
@@ -187,15 +251,43 @@ Algorithm:
 
 Program:
 
-//type your code here
-
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject
+{
+char name[20];
+int marks;
+};
+int main()
+{
+int i,n;
+scanf("%d",&n);
+struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+if(s==NULL)
+{
+printf("Memory Alocation Failed\n");
+return 1;
+}
+for(i=0;i<n;i++)
+{
+scanf("%s %d",s[i].name,&s[i].marks);
+}
+for(i=0;i<n;i++)
+{
+printf("%s %d\n",s[i].name,s[i].marks);
+}
+free (s);
+return 0;
+}
+```
 
 
 
 Output:
 
+<img width="752" height="473" alt="image" src="https://github.com/user-attachments/assets/9f58432e-cb79-42df-ae57-194439afef9d" />
 
-//paste your output here
 
 
 
@@ -203,4 +295,5 @@ Output:
 
 
 Result:
+
 Thus, the program is verified successfully
